@@ -8,7 +8,7 @@ from io import BytesIO
 from fastai.vision import *
 
 model_file_url = 'https://drive.google.com/uc?export=download&id=1-CmqVi7Xz0lgrABIj43ggeSbEmYRaWlL'
-model_file_name = 'model'
+model_file_name = 'export.pkl'
 classes = ['hot_dog', 'not_hot_dog']
 path = Path(__file__).parent
 
