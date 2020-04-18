@@ -24,11 +24,13 @@ async def download_file(url, dest):
             with open(dest, 'wb') as f: f.write(data)
 
 async def setup_learner():
-    await download_file(model_file_url, path/'models'/f'{model_file_name}.pth')
-    data_bunch = ImageDataBunch.single_from_classes(path, classes,
-        ds_tfms=get_transforms(), size=299).normalize(imagenet_stats)
-    learn = cnn_learner(data_bunch, models.resnet34, pretrained=False)
-    learn.load(model_file_name)
+    #await download_file(model_file_url, path/'models'/f'{model_file_name}.pth')
+    await download_file(model_file_url, path / model_file_name)
+    #data_bunch = ImageDataBunch.single_from_classes(path, classes,
+        #ds_tfms=get_transforms(), size=299).normalize(imagenet_stats)
+    #learn = cnn_learner(data_bunch, models.resnet34, pretrained=False)
+    #learn.load(model_file_name)
+    learn = load_learner(path, model_file_name)
     return learn
 
 loop = asyncio.get_event_loop()
