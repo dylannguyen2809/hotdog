@@ -1,2 +1,2 @@
-# google-app-engine
-Google App Engine starter pack for fast.ai vision model deployment
+Hot Dog/Not Hot Dog
+Image classifier for hotdogs inspired by HBO's Silicon Valley. Made using fast.ai vision.
